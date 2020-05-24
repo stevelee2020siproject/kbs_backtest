@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="basicMapper">
+
+	<select id="getClassOffline" resultType="map">
+		SELECT 
+			*
+		FROM 
+			class_offline
+	</select>
+	
+	
+	<select id="getUserMail" parameterType="String" resultType="map">
+		SELECT 
+			*
+		FROM 
+			class_offline co, pay_ledger pl
+		WHERE 1=1
+			AND co.class_no = pl.ledger_no
+			AND pl.mail_id = #{userMail}
+	</select>
+	
+</mapper>

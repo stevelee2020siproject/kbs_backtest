@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="userMapper">
+
+	<select id="getUserList" resultType="map">
+		SELECT 
+			* 
+		FROM 
+			usr_user
+	</select>
+	
+	<select id="getUser" resultType="map" parameterType="String">
+		SELECT 
+			* 
+		FROM
+			usr_user
+		WHERE 1=1
+			AND mail_id = #{userName}
+	</select>
+</mapper>
